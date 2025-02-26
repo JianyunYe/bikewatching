@@ -1,9 +1,5 @@
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
-
-
 import mapboxgl from 'https://cdn.jsdelivr.net/npm/mapbox-gl@2.15.0/+esm';
-
-
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoiaml5MDk5IiwiYSI6ImNtN2xpeXJlZzAzd3gya3EwNTU4Z29sczcifQ.7rY3IfhfBUnfsrR11yxHqA';
 
@@ -20,7 +16,6 @@ let stations = [];
 let trips = [];
 let circles;
 let radiusScale;
-
 
 function formatTime(minutes) {
     const date = new Date(0, 0, 0, Math.floor(minutes / 60), minutes % 60);
@@ -114,7 +109,6 @@ map.on('load', async () => {
     }
 
     stations = jsonData.data.stations;
-
 
     const svg = d3.select('#map').select('svg');
 
@@ -223,7 +217,6 @@ map.on('load', async () => {
                 return ratio;
             });
     }
-    
     
     timeSlider.addEventListener('input', updateTimeDisplay);
     
